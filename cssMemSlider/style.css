@@ -92,8 +92,10 @@ body {
 
 .slider__subtitle {
   width: 400%;
+  height: 2rem;
   overflow: hidden;
   display: flex;
+  align-items: center;
   grid-area: title;
   transition: all 0.3s ease-out;
 }
@@ -111,26 +113,38 @@ input[type='radio'] {
 
 .controls-labels {
   grid-area: buttons;
-  background-color: var(--dark);;
+  background-color: var(--dark);
   z-index: 99;
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: fit-content;
+  box-shadow: -7px 0px 10px 0px var(--dark);
 }
 
 .label {
   display: inline-block;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label:hover .label__item {
+  background: var(--light);
+  border: 2px solid var(--light);
+}
+
+.label__item {
   width: 1rem;
   height: 1rem;
   margin-right: 3px;
   background: var(--primary);
   border-radius: 50%;
   border: 2px solid var(--primary);
-  cursor: pointer;
   transition: all 0.2s ease-out;
-  margin: 0 4px;
-}
-
-.label:hover {
-  background: var(--light);;
-  border: 2px solid var(--light);;
 }
 
 .label:last-child {
@@ -149,7 +163,7 @@ input[type='radio'] {
   transform: translateX(0%);
 }
 
-#control1:checked ~ .controls-labels .label:nth-child(1) {
+#control1:checked ~ .controls-labels .label:nth-child(1) .label__item {
   background: transparent;
 }
 
@@ -163,7 +177,7 @@ input[type='radio'] {
   transform: translateX(-25%);
 }
 
-#control2:checked ~ .controls-labels .label:nth-child(2) {
+#control2:checked ~ .controls-labels .label:nth-child(2) .label__item {
   background: transparent;
 }
 
@@ -177,7 +191,7 @@ input[type='radio'] {
   transform: translateX(-50%);
 }
 
-#control3:checked ~ .controls-labels .label:nth-child(3) {
+#control3:checked ~ .controls-labels .label:nth-child(3) .label__item {
   background: transparent;
 }
 
@@ -191,7 +205,7 @@ input[type='radio'] {
   transform: translateX(-75%);
 }
 
-#control4:checked ~ .controls-labels .label:nth-child(4) {
+#control4:checked ~ .controls-labels .label:nth-child(4) .label__item {
   background: transparent;
 }
 
@@ -207,6 +221,10 @@ input[type='radio'] {
       'title';
     grid-row-gap: 1.25rem;
     width: 90%;
+  }
+
+  .slider__subtitle {
+    height: fit-content;
   }
 
   .controls-labels {
