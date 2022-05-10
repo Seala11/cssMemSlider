@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* GENERAL STYLE */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: gray;
+}
+
+.title {
+  font-weight: 600;
+  text-align: center;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+  width: 100%;
+}
+
+.image1 {
+  background-color: rgb(221, 147, 147);
+}
+
+.image2 {
+  background-color: rgb(36, 75, 36);
+}
+
+.image3 {
+  background-color: rgb(197, 199, 75);
+}
+
+.image4 {
+  background-color: rgb(81, 53, 92);
+}
+
+/* SLIDER */
+.section__slider {
+  background-color: black;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.slider {
+  overflow: hidden;
+  width: 400px;
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-areas:
+    'slider slider slider'
+    'title title buttons';
+}
+
+.slider__wrapper {
+  grid-area: slider;
+  display: flex;
+  overflow: hidden;
+  list-style-type: none;
+  transition: all 0.3s ease-out;
+  width: 400%;
+  /* 4 sliders */
+}
+
+.slider__item {
+  position: relative;
+  width: calc(100% / 4);
+}
+
+.slider__subtitle {
+  width: 500%;
+  overflow: hidden;
+  display: flex;
+  grid-area: title;
+  transition: all 0.3s ease-out;
+}
+
+.subtitle {
+  width: calc(100% / 4);
+}
+
+/* RADIO */
+input[type='radio'] {
+  display: none;
+}
+
+/* LABELS */
+
+.controls-labels {
+  grid-area: buttons;
+  background-color: black;
+  z-index: 99;
+}
+
+.label {
+  display: inline-block;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+  background: rgb(37, 102, 223);
+  border-radius: 50%;
+  border: 2px solid rgb(37, 102, 223);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  margin: 0 4px;
+}
+
+.label:hover {
+  background: white;
+  border: 2px solid white;
+}
+
+.label:last-child {
+  margin-right: 0;
+}
+
+/* ANIMATION SLIDER */
+
+/* slider 1 */
+
+#control1:checked ~ .slider__wrapper {
+  transform: translateX(0%);
+}
+
+#control1:checked ~ .slider__subtitle {
+  transform: translateX(0%);
+}
+
+#control1:checked ~ .controls-labels .label:nth-child(1) {
+  background: transparent;
+}
+
+/* slider 2 */
+
+#control2:checked ~ .slider__wrapper {
+  transform: translateX(-25%);
+}
+
+#control2:checked ~ .slider__subtitle {
+  transform: translateX(-25%);
+}
+
+#control2:checked ~ .controls-labels .label:nth-child(2) {
+  background: transparent;
+}
+
+/* slider 3 */
+
+#control3:checked ~ .slider__wrapper {
+  transform: translateX(-50%);
+}
+
+#control3:checked ~ .slider__subtitle {
+  transform: translateX(-50%);
+}
+
+#control3:checked ~ .controls-labels .label:nth-child(3) {
+  background: transparent;
+}
+
+/* slider 4 */
+
+#control4:checked ~ .slider__wrapper {
+  transform: translateX(-75%);
+}
+
+#control4:checked ~ .slider__subtitle {
+  transform: translateX(-75%);
+}
+
+#control4:checked ~ .controls-labels .label:nth-child(4) {
+  background: transparent;
+}

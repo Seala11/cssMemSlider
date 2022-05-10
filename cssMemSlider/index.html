@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CssMemSlider</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="title">Pure CSS Slider</h1>
+
+    <section class="section__slider">
+      <div class="slider">
+        <input type="radio" name="controls" id="control1" checked />
+        <input type="radio" name="controls" id="control2" />
+        <input type="radio" name="controls" id="control3" />
+        <input type="radio" name="controls" id="control4" />
+
+        <ul class="slider__wrapper">
+          <li id="slider1" class="slider__item">
+            <div class="image image1">Image 1</div>
+          </li>
+          <li id="slider2" class="slider__item">
+            <div class="image image2">Image 2</div>
+          </li>
+          <li id="slider3" class="slider__item">
+            <div class="image image3">Image 3</div>
+          </li>
+          <li id="slider4" class="slider__item">
+            <div class="image image4">Image 4</div>
+          </li>
+        </ul>
+
+        <div class="slider__subtitle">
+            <p class="subtitle">Image 1 subtitle</p>
+            <p class="subtitle">Image 2 subtitle</p>
+            <p class="subtitle">Image 3 subtitle</p>
+            <p class="subtitle">Image 4 subtitle</p>
+        </div>
+
+        <div class="controls-labels">
+          <label class="label" for="control1"></label
+          ><label class="label" for="control2"></label
+          ><label class="label" for="control3"></label
+          ><label class="label" for="control4"></label>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
