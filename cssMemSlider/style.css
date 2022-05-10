@@ -2,6 +2,13 @@
 
 /* GENERAL STYLE */
 
+:root {
+  --dark: rgb(28, 28, 28);
+  --light: rgb(243, 243, 243);
+  --white: rgb(255, 255, 255);
+  --primary: rgb(37, 102, 223);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,22 +17,23 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: white;
+  background-color: var(--light);
 }
 
 .title {
   font-weight: 600;
   text-align: center;
-  margin: 20px 0;
+  margin: 2rem 0;
 }
 
 .image {
-  height: 400px;
+  height: 25rem;
   width: 100%;
-  background-color: white;
+  background-color: var(--white);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  border-radius: 4px;
 }
 
 .image1 {
@@ -46,22 +54,22 @@ body {
 
 /* SLIDER */
 .section__slider {
-  background-color: black;
-  width: 700px;
-  height: 540px;
-  margin: 20px auto;
+  background-color: var(--dark);
+  width: 44rem;
+  height: 32rem;
+  margin: 1.25rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: whitesmoke;
-  border-radius: 20px;
+  color: var(--light);
+  border-radius: 1.25rem;
 }
 
 .slider {
   overflow: hidden;
   width: 80%;
   margin: 0 auto;
-  height: 500px;
+  height: 32rem;
   display: grid;
   grid-template-areas:
     'slider slider slider'
@@ -75,17 +83,15 @@ body {
   list-style-type: none;
   transition: all 0.3s ease-out;
   width: 400%;
-  margin-top: 30px;
-  /* 4 sliders */
+  margin-top: 1.8rem;
 }
 
 .slider__item {
-  position: relative;
   width: calc(100% / 4);
 }
 
 .slider__subtitle {
-  width: 500%;
+  width: 400%;
   overflow: hidden;
   display: flex;
   grid-area: title;
@@ -93,7 +99,7 @@ body {
 }
 
 .subtitle {
-  width: calc(100% / 4);
+  width: 100%;
 }
 
 /* RADIO */
@@ -105,27 +111,26 @@ input[type='radio'] {
 
 .controls-labels {
   grid-area: buttons;
-  background-color: black;
+  background-color: var(--dark);;
   z-index: 99;
 }
 
 .label {
   display: inline-block;
-  position: relative;
-  width: 15px;
-  height: 15px;
+  width: 1rem;
+  height: 1rem;
   margin-right: 3px;
-  background: rgb(37, 102, 223);
+  background: var(--primary);
   border-radius: 50%;
-  border: 2px solid rgb(37, 102, 223);
+  border: 2px solid var(--primary);
   cursor: pointer;
   transition: all 0.2s ease-out;
   margin: 0 4px;
 }
 
 .label:hover {
-  background: white;
-  border: 2px solid white;
+  background: var(--light);;
+  border: 2px solid var(--light);;
 }
 
 .label:last-child {
@@ -188,4 +193,34 @@ input[type='radio'] {
 
 #control4:checked ~ .controls-labels .label:nth-child(4) {
   background: transparent;
+}
+
+@media screen and (max-width: 767px) {
+  .section__slider {
+    width: 90vw;
+  }
+
+  .slider {
+    grid-template-areas:
+      'slider'
+      'buttons'
+      'title';
+    grid-row-gap: 1.25rem;
+    width: 90%;
+  }
+
+  .controls-labels {
+    margin: 0 auto;
+    align-self: center;
+  }
+
+  .image {
+    min-height: 18.75rem;
+    height: 100%;
+    width: 100%;
+  }
+
+  .subtitle {
+    width: 90%;
+  }
 }
