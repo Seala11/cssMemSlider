@@ -140,15 +140,10 @@ input[type='radio'] {
 .label__item {
   width: 1rem;
   height: 1rem;
-  margin-right: 0.188rem;
   background: var(--primary);
   border-radius: 50%;
   border: 0.125rem solid var(--primary);
   transition: all 0.2s ease-out;
-}
-
-.label:last-child {
-  margin-right: 0;
 }
 
 /* ANIMATION SLIDER */
